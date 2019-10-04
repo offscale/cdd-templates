@@ -1,7 +1,9 @@
 [package]
-name = "@PROJECT_NAME"
+name = "PROJECT_NAME"
 version = "0.1.0"
 authors = ["@NAME <@EMAIL>"]
 edition = "2018"
 
 [dependencies]
+actix-web = { git = "https://github.com/offscale/actix-web", branch = "pub-app" }
+lazy_static = "1.2.0"
