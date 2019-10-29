@@ -1,0 +1,20 @@
+---
+name: default project
+version: 0.0.1
+description: description
+author: me@me.com
+openapi: openapi.yaml
+auth: rfc6749
+services:
+  kotlin:
+    bin_path: ~/.cdd/services/cdd-kotlin
+    template_path: ~/.cdd/kotlin
+    project_path: "./kotlin"
+    component_file: src/api/models.kt
+    routes_file: src/api/routes.kt
+  rust:
+    bin_path: ~/.cdd/services/cdd-rust
+    template_path: ~/.cdd/rust
+    project_path: "./rust"
+    component_file: src/api/models.rs
+    routes_file: src/api/routes.rs
