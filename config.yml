@@ -18,3 +18,10 @@ services:
     project_path: "./rust"
     component_file: src/api/models.rs
     routes_file: src/api/routes.rs
+  typescript:
+    bin_path: ~/.cdd/services/cdd-typescript
+    template_path: ~/.cdd/typescript
+    project_path: "./typescript"
+    component_file:api/models.ts
+    routes_file: api/requests.ts
+
