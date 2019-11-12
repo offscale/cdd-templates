@@ -1,3 +1,4 @@
 install:
 	mkdir -p ~/.cdd
-	cp -rf templates/* ~/.cdd/
+	mkdir -p ~/.cdd/templates
+	cp -rf templates/* ~/.cdd/templates
