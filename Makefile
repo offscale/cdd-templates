@@ -1,9 +1,13 @@
-install:
+install: clean
+	rm -rf ~/.cdd
 	mkdir -p ~/.cdd
 	cp -rf * ~/.cdd/
 
-package:
-	tar tar -czvf cdd-latest-x64.tar.gz .
+clean:
+	rm -rf templates/rust/target
 
-copy:
+package: clean
+	tar -czvf cdd-latest-x64.tar.gz Makefile openapi.yml bin templates
+
+copy-linux:
 	cp ../cdd-ctl/target/debug/cdd bin/linux/
