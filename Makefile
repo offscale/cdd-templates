@@ -4,3 +4,6 @@ install:
 
 package:
 	tar tar -czvf cdd-latest-x64.tar.gz .
+
+copy:
+	cp ../cdd-ctl/target/debug/cdd bin/linux/
