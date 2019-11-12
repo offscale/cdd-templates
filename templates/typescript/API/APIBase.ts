@@ -1,8 +1,10 @@
 
 
+class ResponceEmpty {
 
+}
 
-class APIRequest {
+class APIRequest<ResponseType,ErrorType> {
     path(): string {
         return ""
     }
@@ -12,7 +14,7 @@ class APIRequest {
     }
 
 
-    send<T>(callback:(result:T)=>void) {
+    public send(callback:(result:ResponseType)=>void, onError:(error:ErrorType)=>void) {
         var xhr = new XMLHttpRequest();
         xhr.open(this.method(), this.path(), true);
         if (callback) xhr.onload = function() { callback(JSON.parse(this.responseText)); };
@@ -34,5 +36,3 @@ function httpCall(method: string, url:string, data:any, callback:(result:any)=>a
     }
     else xhr.send();
 }
-
-
