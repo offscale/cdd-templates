@@ -1,4 +1,5 @@
 
+type Int = number
 
 class ResponceEmpty {
 
@@ -14,10 +15,18 @@ class APIRequest<ResponseType,ErrorType> {
     }
 
 
-    public send(callback:(result:ResponseType)=>void, onError:(error:ErrorType)=>void) {
+    public send(onSuccess:(result:ResponseType)=>void, onError:(error:ErrorType)=>void) {
         var xhr = new XMLHttpRequest();
         xhr.open(this.method(), this.path(), true);
-        if (callback) xhr.onload = function() { callback(JSON.parse(this.responseText)); };
+        if (onSuccess) xhr.onload = function() { 
+            try {
+                onSuccess(JSON.parse(this.responseText)); 
+            }
+            catch (e) {
+                
+            }
+            
+        };
     
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.send(JSON.stringify(this));
