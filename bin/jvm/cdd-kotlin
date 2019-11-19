@@ -1,2 +1,0 @@
-#!/bin/sh
-java -jar ~/.cdd/services/cdd-kotlin.main.jar $@
