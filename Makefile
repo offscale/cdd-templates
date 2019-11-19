@@ -1,5 +1,4 @@
 install: clean
-	rm -rf ~/.cdd
 	mkdir -p ~/.cdd
 	mkdir -p ~/.cdd/templates
 	cp -r ./templates/* ~/.cdd/templates/
