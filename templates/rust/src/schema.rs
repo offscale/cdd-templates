@@ -6,9 +6,9 @@ table! {
 }
 
 table! {
-    pet (id) {
-        id -> Nullable<Integer>,
-        name -> Nullable<Text>,
+    pet {
+        id -> Integer,
+        name -> Text,
     }
 }
 

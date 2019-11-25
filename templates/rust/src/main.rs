@@ -1,3 +1,5 @@
+#[macro_use] extern crate diesel;
+
 use actix_web::{web, App};
 use diesel::sqlite::*;
 
@@ -7,14 +9,11 @@ mod schema;
 
 pub fn establish_connection() -> SqliteConnection {
     use diesel::prelude::*;
-    SqliteConnection::establish("localhost")
+    SqliteConnection::establish("database.sql")
         .expect(&format!("Error connecting to database."))
 }
 
 fn main() -> Result<(), std::io::Error> {
-    let connection = establish_connection();
-    connection.pet;
-
     let port: u16 = std::env::var("PORT")
         .unwrap_or("8000".to_string())
         .parse::<u16>()
